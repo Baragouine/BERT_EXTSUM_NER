@@ -3,13 +3,18 @@ import numpy as np
 import torch
 
 class DataLoader():
-    def __init__(self, dataset, batch_size=1, shuffle=False, ner=False):
+    def __init__(self, dataset, batch_size=1, shuffle=False, ner=False, prop=None):
         assert batch_size > 0
         self.dataset = dataset
         self.batch_size = batch_size
         self.shuffle = shuffle
         self.lidx = list(range(len(self.dataset)))
         self.ner = ner
+        self.prop = prop
+        
+        if self.prop is not None:
+            assert self.prop >= 0
+            assert self.prop <= 1
 
         # Padding last batch if necessary
         if len(self.lidx) % self.batch_size != 0:
@@ -31,8 +36,14 @@ class DataLoader():
             # Shuffle if necessary
             if self.shuffle:
                 random.shuffle(self.lidx)
+
+        if self.prop is not None:
+            if (idx >= self.prop * (len(self.lidx) / self.batch_size)):
+                return self.dataset[len(self.dataset)]
+
         if (idx >= len(self.lidx) / self.batch_size):
             return self.dataset[len(self.dataset)]
+
         idxs = self.lidx[idx*self.batch_size:idx*self.batch_size+self.batch_size]
         batch = [self.dataset[i] for i in idxs]
 
@@ -41,6 +52,9 @@ class DataLoader():
         return batch
 
     def __len__(self):
+        if self.prop is not None:
+            return int(self.prop * len(self.lidx) / self.batch_size)
+
         return int(len(self.lidx) / self.batch_size)
 
     def merge(self, batch):
