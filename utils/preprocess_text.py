@@ -25,7 +25,7 @@ def preprocess_text(text, sent_tokenizer, bert_tokenizer, block_size, entities=N
   # build list of input_ids without overflow for each input_ids
   y = 0
   while y < len(tokenized_text):
-    text = " [SEP] ".join(tokenized_text[y:]) + " [SEP] "
+    text = (" " + bert_tokenizer.sep_token + " ").join(tokenized_text[y:]) + (" " + bert_tokenizer.sep_token + " ")
 
     inputs = bert_tokenizer.encode_plus(
       text,
@@ -46,7 +46,7 @@ def preprocess_text(text, sent_tokenizer, bert_tokenizer, block_size, entities=N
       input_ids[-1] = bert_tokenizer.sep_token_id
       attention_mask = inputs['attention_mask'].squeeze()
     else:
-      text = " [SEP] ".join(tokenized_text[y:y+n]) + " [SEP] "
+      text = (" " + bert_tokenizer.sep_token + " ").join(tokenized_text[y:y+n]) + (" " + bert_tokenizer.sep_token + " ")
 
       inputs = bert_tokenizer.encode_plus(
         text,
