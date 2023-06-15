@@ -71,6 +71,26 @@ class DataLoader():
 
         idxs = [e["idx"] for e in batch]
 
+        if "labels" in batch[0]:
+            max_doc_len = max([len(e["input_ids"]) for e in batch])
+            for block in range(max_doc_len):
+                line = []
+
+                for e in batch:
+                    if len(e["input_ids"]) > block:
+                        line.append(e)
+
+                list_input_ids.append(torch.cat([e["input_ids"][block].unsqueeze(0) for e in line], dim=0))
+                list_attention_mask.append(torch.cat([e["attention_mask"][block].unsqueeze(0) for e in line]))
+
+                list_labels_sum.append(merge_list([e["labels"][block] for e in line]))
+            
+            #list_labels_sum = merge_list(list_labels_sum)
+            #list_labels_ner = merge_list(list_labels_ner)
+
+            return {"idx" : idxs, "input_ids" : list_input_ids, "attention_mask": list_attention_mask, "labels" : list_labels_sum}
+            
+
         max_doc_len = max([len(e["input_ids"]) for e in batch])
         for block in range(max_doc_len):
             line = []
@@ -81,6 +101,7 @@ class DataLoader():
 
             list_input_ids.append(torch.cat([e["input_ids"][block].unsqueeze(0) for e in line], dim=0))
             list_attention_mask.append(torch.cat([e["attention_mask"][block].unsqueeze(0) for e in line]))
+
             list_labels_sum.append(merge_list([e["labels_sum"][block] for e in line]))
             list_labels_ner.append(merge_list([e["labels_ner"][block] for e in line]))
         
