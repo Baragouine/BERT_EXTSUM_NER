@@ -37,5 +37,9 @@ To install nltk data:
   - Download all data.
   - Close the python console.
 
+## Data acquisition
+  - CNN/DailyMail: See [https://github.com/Baragouine/SummaRuNNer/blob/master/README.md](https://github.com/Baragouine/SummaRuNNer/blob/master/README.md)
+  - NYT50: See [https://github.com/Baragouine/HeterSUMGraph/blob/master/README.md](https://github.com/Baragouine/HeterSUMGraph/blob/master/README.md)
+  - Wikipedia: See [https://github.com/Baragouine/HSG_ExSUM_NER/blob/master/README.md](https://github.com/Baragouine/HSG_ExSUM_NER/blob/master/README.md)
 
 
