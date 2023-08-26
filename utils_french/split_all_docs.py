@@ -5,7 +5,7 @@ def split_doc(doc, sent_tokenizer, is_sep_n = False):
   result = doc
     
   # tokenize sentence
-  result = sent_tokenizer(result)
+  result = sent_tokenizer(result, language="french")
 
   # lower
   result = [line.lower() for line in result]
