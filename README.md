@@ -1,5 +1,9 @@
 # BERT_EXTSUM_NER (extractive summarization and named entity recognition)
 This repository presents and compares BERT based models for extractive summarization, named entity recognition or both.  
+  
+This repository also present the influence of the summary/document ratio on performance.  
+  
+The datasets are CNN-DailyMail, NYT50 and part of the French wikipedia.  
 
 ## Clone project
 ```bash
