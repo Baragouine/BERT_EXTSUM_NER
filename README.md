@@ -54,3 +54,36 @@ Run one of the notebooks below to train and evaluate the associated model:
 
 ## Result
 
+### Influence du ratio résumé/docuemnt with CAMEMBERT_EXT (limited-length ROUGE Recall)
+TODO: put real values
+| dataset | ROUGE-1 | ROUGE-2 | ROUGE-L |  
+|:-:      |:-:      |:-:      |:-:      |  
+| Wikipedia-0.5 |31.4 &plusmn; 0.0|10.1 &plusmn; 0.0|20.0 &plusmn; 0.0|  
+| Wikipedia-high-25 |24.4 &plusmn; 0.0|6.7 &plusmn; 0.0|15.0 &plusmn; 0.0|  
+| Wikipedia-low-25 |32.3 &plusmn; 0.0|12.4 &plusmn; 0.0|21.9 &plusmn; 0.0|  
+
+
+&ast; Wikipedia-0.5: general geography, architecture town planning and geology French wikipedia articles with len(summary)/len(content) <= 0.5.  
+&ast; Wikipedia-high-25: first 25% of general geography, architecture town planning and geology French wikipedia articles sorted by len(summary)/len(content) descending.  
+&ast; Wikipedia-low-25: first 25% of general geography, architecture town planning and geology French wikipedia articles sorted by len(summary)/len(content) ascending.  
+
+### Wikipedia-0.5 (limited-length ROUGE Recall)
+| model | ROUGE-1 | ROUGE-2 | ROUGE-L | NER-BCELoss |  
+|:-:      |:-:      |:-:      |:-:      |:-:          |  
+|camembert_ext_summary_and_ner|||||  
+|camembert_ext_summary|||||  
+|camembert_ner|||||  
+|camembert_base_ccnet_ext_summary_and_ner|||||  
+|camembert_base_wikipedia_4gb_ext_summary_and_ner|||||  
+
+### CNN/DailyMail (full-length f1 rouge)
+| model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
+|:-:    |:-:      |:-:      |:-:      |  
+|SummaRuNNer(Nallapati)|39.6 &plusmn; 0.2|16.2 &plusmn; 0.2|35.3 &plusmn; 0.2|  
+| BERTBASE based |||  
+
+### NYT50 (limited-length ROUGE Recall)
+| model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
+|:-:    |:-:      |:-:      |:-:      |  
+| HeterSUMGraph (Wang) | 46.89 | 26.26 | 42.58 |
+| BERTBASE based |||  
