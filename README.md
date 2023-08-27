@@ -68,7 +68,7 @@ TODO: put real values
 &ast; Wikipedia-low-25: first 25% of general geography, architecture town planning and geology French wikipedia articles sorted by len(summary)/len(content) ascending.  
 
 ### Wikipedia-0.5 (limited-length ROUGE Recall)
-| model | ROUGE-1 | ROUGE-2 | ROUGE-L | NER-BCELoss |  
+| model | ROUGE-1 | ROUGE-2 | ROUGE-L | ACCURACY |  
 |:-:      |:-:      |:-:      |:-:      |:-:          |  
 |camembert_ext_summary_and_ner|||||  
 |camembert_ext_summary|||||  
