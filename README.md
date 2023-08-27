@@ -54,13 +54,12 @@ Run one of the notebooks below to train and evaluate the associated model:
 
 ## Result
 
-### Influence du ratio résumé/docuemnt with CAMEMBERT_EXT (limited-length ROUGE Recall)
-TODO: put real values
+### Impact of the summary/content ratio with CAMEMBERT_EXT on Wikipedia (limited-length ROUGE Recall)
 | dataset | ROUGE-1 | ROUGE-2 | ROUGE-L |  
 |:-:      |:-:      |:-:      |:-:      |  
-| Wikipedia-0.5 |31.4 &plusmn; 0.0|10.1 &plusmn; 0.0|20.0 &plusmn; 0.0|  
-| Wikipedia-high-25 |24.4 &plusmn; 0.0|6.7 &plusmn; 0.0|15.0 &plusmn; 0.0|  
-| Wikipedia-low-25 |32.3 &plusmn; 0.0|12.4 &plusmn; 0.0|21.9 &plusmn; 0.0|  
+| Wikipedia-0.5 |28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|  
+| Wikipedia-high-25 |23.3 &plusmn; 0.0|6.4 &plusmn; 0.0|14.5 &plusmn; 0.0|  
+| Wikipedia-low-25 |29.5 &plusmn; 0.0|10.3 &plusmn; 0.0|20.3 &plusmn; 0.0|  
 
 
 &ast; Wikipedia-0.5: general geography, architecture town planning and geology French wikipedia articles with len(summary)/len(content) <= 0.5.  
@@ -70,20 +69,20 @@ TODO: put real values
 ### Wikipedia-0.5 (limited-length ROUGE Recall)
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L | ACCURACY |  
 |:-:      |:-:      |:-:      |:-:      |:-:          |  
-|camembert_ext_summary_and_ner|||||  
-|camembert_ext_summary|||||  
-|camembert_ner|||||  
-|camembert_base_ccnet_ext_summary_and_ner|||||  
-|camembert_base_wikipedia_4gb_ext_summary_and_ner|||||  
+|camembert_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|0.997|  
+|camembert_ext_summary|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|  
+|camembert_ner|N/A|N/A|N/A|0.997 &plusmn; 0.0|  
+|camembert_base_ccnet_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|0.997 &plusmn; 0.0|  
+|camembert_base_wikipedia_4gb_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.6 &plusmn; 0.0|0.997|  
 
 ### CNN/DailyMail (full-length f1 rouge)
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
 |:-:    |:-:      |:-:      |:-:      |  
 |SummaRuNNer(Nallapati)|39.6 &plusmn; 0.2|16.2 &plusmn; 0.2|35.3 &plusmn; 0.2|  
-| BERTBASE based |||  
+| BERTBASE based |31.4 &plusmn; 0.0|9.9 &plusmn; 0.0|19.2 &plusmn; 0.0|  
 
 ### NYT50 (limited-length ROUGE Recall)
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
 |:-:    |:-:      |:-:      |:-:      |  
 | HeterSUMGraph (Wang) | 46.89 | 26.26 | 42.58 |
-| BERTBASE based |||  
+| BERTBASE based |38.4 &plusmn; 0.0|17.7 &plusmn; 0.0|26.8 &plusmn; 0.0|  
