@@ -79,10 +79,10 @@ Run one of the notebooks below to train and evaluate the associated model:
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
 |:-:    |:-:      |:-:      |:-:      |  
 |SummaRuNNer(Nallapati)|39.6 &plusmn; 0.2|16.2 &plusmn; 0.2|35.3 &plusmn; 0.2|  
-| BERT-BASE based |31.4 &plusmn; 0.0|9.9 &plusmn; 0.0|19.2 &plusmn; 0.0|  
+| BERT-base based |31.4 &plusmn; 0.0|9.9 &plusmn; 0.0|19.2 &plusmn; 0.0|  
 
 ### NYT50 (limited-length ROUGE Recall)
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L |  
 |:-:    |:-:      |:-:      |:-:      |  
 | HeterSUMGraph (Wang) | 46.89 | 26.26 | 42.58 |
-| BERT-BASE based |38.4 &plusmn; 0.0|17.7 &plusmn; 0.0|26.8 &plusmn; 0.0|  
+| BERT-base based |38.4 &plusmn; 0.0|17.7 &plusmn; 0.0|26.8 &plusmn; 0.0|  
