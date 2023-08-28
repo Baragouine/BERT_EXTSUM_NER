@@ -69,7 +69,7 @@ Run one of the notebooks below to train and evaluate the associated model:
 ### Wikipedia-0.5 (limited-length ROUGE Recall)
 | model | ROUGE-1 | ROUGE-2 | ROUGE-L | ACCURACY |  
 |:-:      |:-:      |:-:      |:-:      |:-:          |  
-|camembert_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|0.997|  
+|camembert_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|0.997 &plusmn; 0.0|  
 |camembert_ext_summary|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|  
 |camembert_ner|N/A|N/A|N/A|0.997 &plusmn; 0.0|  
 |camembert_base_ccnet_ext_summary_and_ner|28.4 &plusmn; 0.0|8.1 &plusmn; 0.0|17.7 &plusmn; 0.0|0.997 &plusmn; 0.0|  
